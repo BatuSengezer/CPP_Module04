@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 21:16:06 by bsengeze          #+#    #+#             */
-/*   Updated: 2025/03/19 21:16:40 by bsengeze         ###   ########.fr       */
+/*   Updated: 2025/03/19 21:39:25 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,10 @@
 class Dog : public Animal
 {
 public:
-  // Orthodox Canonical Form
-  Dog();                            // Default constructor
-  Dog(const Dog &other);            // Copy constructor
-  Dog &operator=(const Dog &other); // Copy assignment operator
-  virtual ~Dog();                   // Destructor
+  Dog();
+  Dog(const Dog &other);
+  Dog &operator=(const Dog &other);
+  virtual ~Dog();
 
   // Override makeSound method
   virtual void makeSound() const;

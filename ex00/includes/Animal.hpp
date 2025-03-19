@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 21:13:02 by bsengeze          #+#    #+#             */
-/*   Updated: 2025/03/19 21:13:38 by bsengeze         ###   ########.fr       */
+/*   Updated: 2025/03/19 21:39:52 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ protected:
   std::string type;
 
 public:
-  // Orthodox Canonical Form
   Animal();
   Animal(const Animal &other);
   Animal &operator=(const Animal &other);

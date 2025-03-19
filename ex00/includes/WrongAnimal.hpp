@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 21:19:05 by bsengeze          #+#    #+#             */
-/*   Updated: 2025/03/19 21:19:07 by bsengeze         ###   ########.fr       */
+/*   Updated: 2025/03/19 21:38:25 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@ protected:
   std::string type;
 
 public:
-  // Orthodox Canonical Form
-  WrongAnimal();                                    // Default constructor
-  WrongAnimal(const WrongAnimal &other);            // Copy constructor
-  WrongAnimal &operator=(const WrongAnimal &other); // Copy assignment operator
-  ~WrongAnimal();                                   // Destructor
+  WrongAnimal();
+  WrongAnimal(const WrongAnimal &other);
+  WrongAnimal &operator=(const WrongAnimal &other);
+  ~WrongAnimal();
 
   // Member functions
   std::string getType() const;
