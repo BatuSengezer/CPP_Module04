@@ -6,13 +6,13 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 21:16:51 by bsengeze          #+#    #+#             */
-/*   Updated: 2025/03/20 17:23:07 by bsengeze         ###   ########.fr       */
+/*   Updated: 2025/03/20 19:00:08 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : brain(new Brain())
+Dog::Dog() : Animal(), brain(new Brain())
 {
   this->type = "Dog";
   std::cout << "Dog default constructor called" << std::endl;
