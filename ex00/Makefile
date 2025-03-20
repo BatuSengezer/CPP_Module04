@@ -6,7 +6,7 @@
 #    By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/19 21:10:58 by bsengeze          #+#    #+#              #
-#    Updated: 2025/03/19 21:17:25 by bsengeze         ###   ########.fr        #
+#    Updated: 2025/03/20 13:23:19 by bsengeze         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_DIR = srcs/
 GREEN   = \033[32;1m
 RESET	= \033[0m
 
-SRC 	= main.cpp ClapTrap.cpp
+SRC 	= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 SRCS	= $(addprefix $(SRC_DIR), $(SRC))
 
 OBJ		= $(SRC:.cpp=.o)
