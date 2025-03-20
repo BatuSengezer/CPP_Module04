@@ -6,19 +6,19 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 21:16:51 by bsengeze          #+#    #+#             */
-/*   Updated: 2025/03/19 21:40:59 by bsengeze         ###   ########.fr       */
+/*   Updated: 2025/03/20 17:23:07 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog()
+Dog::Dog() : brain(new Brain())
 {
   this->type = "Dog";
   std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal(other)
+Dog::Dog(const Dog &other) : Animal(other), brain(new Brain(*other.brain))
 {
   std::cout << "Dog copy constructor called" << std::endl;
 }
@@ -29,12 +29,15 @@ Dog &Dog::operator=(const Dog &other)
   if (this != &other)
   {
     Animal::operator=(other);
+    delete brain;
+    brain = new Brain(*other.brain);
   }
   return *this;
 }
 
 Dog::~Dog()
 {
+  delete brain;
   std::cout << "Dog destructor called" << std::endl;
 }
 

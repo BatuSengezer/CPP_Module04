@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 21:45:49 by bsengeze          #+#    #+#             */
-/*   Updated: 2025/03/20 14:06:13 by bsengeze         ###   ########.fr       */
+/*   Updated: 2025/03/20 17:23:06 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,40 +16,45 @@
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
-
 int main()
 {
-  // Test proper polymorphic behavior
-  std::cout << "=== Testing proper polymorphism ===" << std::endl;
-  const Animal *meta = new Animal();
+  // Test basic functionality
+  std::cout << "=== Basic functionality test ===" << std::endl;
   const Animal *j = new Dog();
   const Animal *i = new Cat();
-
-  std::cout << j->getType() << " " << std::endl;
-  j->makeSound(); // will output the dog sound
-  std::cout << i->getType() << " " << std::endl;
-  i->makeSound(); // will output the cat sound
-  std::cout << meta->getType() << " " << std::endl;
-  meta->makeSound(); // will output the animal sound
-
-  // Cleanup
-  delete meta;
-  delete j;
+  delete j; // should not create a leak
   delete i;
 
-  // Test improper polymorphic behavior
-  std::cout << "\n=== Testing improper polymorphism ===" << std::endl;
-  const WrongAnimal *wrongMeta = new WrongAnimal();
-  const WrongAnimal *wrongCat = new WrongCat();
+  // Test array of animals
+  std::cout << "\n=== Array of animals test ===" << std::endl;
+  const int numAnimals = 4;
+  Animal *animals[numAnimals];
 
-  std::cout << wrongCat->getType() << " " << std::endl;
-  wrongCat->makeSound(); // will NOT output the cat sound, but the animal sound!
-  std::cout << wrongMeta->getType() << " " << std::endl;
-  wrongMeta->makeSound();
+  // Fill half with Dogs and half with Cats
+  for (int i = 0; i < numAnimals / 2; ++i)
+  {
+    animals[i] = new Dog();
+  }
+  for (int i = numAnimals / 2; i < numAnimals; ++i)
+  {
+    animals[i] = new Cat();
+  }
 
-  // Cleanup
-  delete wrongMeta;
-  delete wrongCat; // cat destructor is not called!
+  // Delete all animals
+  for (int i = 0; i < numAnimals; ++i)
+  {
+    delete animals[i];
+  }
+
+  // Test deep copy
+  std::cout << "\n=== Deep copy test ===" << std::endl;
+  Dog originalDog;
+  {
+    Dog copyDog = originalDog; // Test copy constructor
+  } // copyDog is destroyed here
+
+  // This will still work because originalDog has its own Brain
+  std::cout << "Original dog still exists" << std::endl;
 
   return 0;
 }
