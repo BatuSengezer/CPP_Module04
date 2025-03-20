@@ -6,15 +6,12 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 21:45:49 by bsengeze          #+#    #+#             */
-/*   Updated: 2025/03/20 18:55:33 by bsengeze         ###   ########.fr       */
+/*   Updated: 2025/03/20 19:19:43 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
 int main()
