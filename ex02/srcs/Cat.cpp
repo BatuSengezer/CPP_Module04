@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 21:18:05 by bsengeze          #+#    #+#             */
-/*   Updated: 2025/03/20 19:46:02 by bsengeze         ###   ########.fr       */
+/*   Updated: 2025/03/20 20:56:11 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ Cat &Cat::operator=(const Cat &other)
 
 Cat::~Cat()
 {
-  delete brain;
   std::cout << "Cat destructor called" << std::endl;
+  delete brain;
 }
 
 void Cat::makeSound() const

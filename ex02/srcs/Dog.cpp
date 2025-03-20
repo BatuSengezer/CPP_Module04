@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 21:16:51 by bsengeze          #+#    #+#             */
-/*   Updated: 2025/03/20 19:46:18 by bsengeze         ###   ########.fr       */
+/*   Updated: 2025/03/20 20:56:25 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ Dog &Dog::operator=(const Dog &other)
 
 Dog::~Dog()
 {
-  delete brain;
   std::cout << "Dog destructor called" << std::endl;
+  delete brain;
 }
 
 void Dog::makeSound() const
